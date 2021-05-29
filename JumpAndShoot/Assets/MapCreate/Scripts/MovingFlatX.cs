@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MovingFlatX : MonoBehaviour
 {
-    public GameObject Player;
-    public float speed = 0.05f, changeDirection = -1, rangeMoveSide;
+   // public GameObject Player;
+    public float speed , changeDirection, rangeMoveSide;
     Vector3 Move;
     float z;
     float x;
@@ -26,7 +26,7 @@ public class MovingFlatX : MonoBehaviour
         Move.z += z;
         transform.position =  Vector3.Lerp(transform.position,Move,speed*Time.deltaTime);
     }
-    private void OnTriggerEnter(Collider other)
+  /*  private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == Player)
         {
@@ -39,5 +39,5 @@ public class MovingFlatX : MonoBehaviour
         {
             Player.transform.parent = null;
         }
-    }
+    }*/
 }
