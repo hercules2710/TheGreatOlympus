@@ -6,15 +6,17 @@ using UnityEngine;
 public class MovingFlatX : MonoBehaviour
 {
    // public GameObject Player;
-    public float speed , changeDirection, rangeMoveSide;
+    public float changeSpeed , changeDirection, rangeMoveSide;
     Vector3 Move;
     float z;
     float x;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
          x = Random.Range(-rangeMoveSide, rangeMoveSide);
          z = Random.Range(-rangeMoveSide, rangeMoveSide);
+        speed = Random.Range(0.5f,changeSpeed);
         
         Move = transform.position;
     }
