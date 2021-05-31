@@ -12,6 +12,7 @@ public class onlineRoomController : MonoBehaviour
     public GameObject zoneCam;
     public GameObject feedMessage;
     public GameObject messageGrid;
+    public GameObject[] playerPointArray;
     public Text pingTxt;
     bool isInputEsc = false;
     bool isStarting;
@@ -20,6 +21,7 @@ public class onlineRoomController : MonoBehaviour
     {
         isStarting = true;
         isInputEsc = false;
+        playerPointArray = GameObject.FindGameObjectsWithTag("playerSpawnPoint");
         if (photonView.isMine)
         {
             activateMouse();
@@ -47,7 +49,8 @@ public class onlineRoomController : MonoBehaviour
     {       
         zoneCam.SetActive(false);
         startPanel.SetActive(false);
-        PhotonNetwork.Instantiate(playerPrefab.name, gameObject.transform.position, Quaternion.identity, 0);
+        int startPoint = Random.Range(0, playerPointArray.Length);
+        PhotonNetwork.Instantiate(playerPrefab.name, playerPointArray[startPoint].transform.position, Quaternion.identity, 0);
     }
     public void leaveRoom()
     {

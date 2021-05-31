@@ -26,18 +26,18 @@ public class MovingFlatX : MonoBehaviour
         Move.z += z;
         transform.position =  Vector3.Lerp(transform.position,Move,speed*Time.deltaTime);
     }
-  /*  private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == Player)
+        if(other.gameObject.transform.tag.Equals("Player"))
         {
-            Player.transform.parent = transform;
+            other.transform.parent = transform;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == Player)
+        if(other.transform.tag.Equals("Player"))
         {
-            Player.transform.parent = null;
+            other.transform.parent = null;
         }
-    }*/
+    }
 }

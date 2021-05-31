@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DestroyTrig
+  - Wall
+  - effectPosition
+  - healthBar
+  - Weapon
+  - EvaBullet
+  - Gun
+  - camPlayer
+  - BigGunItem
+  - spawnZone
+  - playerSpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -13,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 

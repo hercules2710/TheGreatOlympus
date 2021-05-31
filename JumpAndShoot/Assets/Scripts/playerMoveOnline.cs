@@ -27,7 +27,7 @@ public class playerMoveOnline : MonoBehaviour
     public int changeGun = 0;
     public int nextScene;
     float groundDistance = 0.5f;
-    float jumpStrength = 3f;
+    public float jumpStrength;
     float realTime;
     bool isGrounded;
     bool hitAble;

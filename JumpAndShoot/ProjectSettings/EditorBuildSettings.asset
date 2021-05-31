@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuMain.unity
     guid: 05c0c5168bcd7ff49992670246252705
   - enabled: 1
+    path: Assets/MapCreate/Scenes/Online.unity
+    guid: a52afb58ee0f0ac41b0fe97c67adaca5
+  - enabled: 1
     path: Assets/Scenes/multiplayer.unity
     guid: 63cd98039a07be1419258f93534ee5c7
   m_configObjects: {}

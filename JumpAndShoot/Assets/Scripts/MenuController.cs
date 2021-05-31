@@ -83,6 +83,6 @@ public class MenuController : MonoBehaviour
     }
     private void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("multiplayer");
+        PhotonNetwork.LoadLevel("Online");
     }
 }

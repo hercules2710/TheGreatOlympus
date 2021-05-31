@@ -6,6 +6,7 @@ public class CamMove : MonoBehaviour
 {
     public Transform playerBody;
     public Transform gunControll;
+    public float lookUpHeight;
    // public PhotonView photonView;
     float mouseSensitivity = 120f;
     float rotateX = 0f;
@@ -27,7 +28,7 @@ public class CamMove : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         rotateX -= mouseY;
-        rotateX = Mathf.Clamp(rotateX, -50f, 40f);
+        rotateX = Mathf.Clamp(rotateX, -lookUpHeight, lookUpHeight);
         transformLocal(rotateX);
         transformRotate(mouseX);
       //  photonView.RPC("transformLocal", PhotonTargets.AllBuffered, rotateX);

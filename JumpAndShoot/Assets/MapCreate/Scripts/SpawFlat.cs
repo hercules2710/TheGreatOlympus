@@ -6,12 +6,12 @@ public class SpawFlat : MonoBehaviour
 {
     public float zone = 0.5f;
     public GameObject Object;
-    public float xPos;
-    public float zPos;
+    float xPos;
+    float zPos;
     public float spawnDelayTime;
     public float timedelay;
-    public float flatcount;
-    public float countdelay;
+    float flatcount;
+    public int countdelay;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +29,15 @@ public class SpawFlat : MonoBehaviour
         {
             xPos = Random.Range(90, 150);
             zPos = Random.Range(-30, 30);
-            for (countdelay = 0; countdelay <= flatcount; countdelay += 3)
+            for (int i = 0; i <= flatcount; i += countdelay)
             {
                 if (flatcount == countdelay)
                 {
+                    flatcount = 0;
                     yield return new WaitForSeconds(timedelay);
                 }
             }
-            Instantiate(Object, new Vector3(xPos, 10, zPos), Quaternion.identity);
+            PhotonNetwork.Instantiate(Object.name, new Vector3(xPos, 10, zPos), Quaternion.identity,0);
             yield return new WaitForSeconds(spawnDelayTime);
             flatcount += 1;
         }
